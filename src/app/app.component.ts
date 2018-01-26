@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   moduleId: module.id,
@@ -10,11 +9,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
   title = 'app';
-  numberForm: FormGroup;
-  order: any;
-
-  constructor(private db: AngularFireDatabase, private fb: FormBuilder) { }
-
+  constructor() { }
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
 }
