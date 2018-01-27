@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
-// import { AngularFireDatabaseModule } from 'angularfire2/database';
-// import { AngularFireAuthModule } from 'angularfire2/auth';
-// import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule,  } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+ import { AngularFireDatabaseModule } from 'angularfire2/database';
+ import { AngularFireAuthModule } from 'angularfire2/auth';
+ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PizzastatusComponent } from './components/pizzastatus/pizzastatus.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -47,8 +49,17 @@ import { NearbyComponent } from './components/nearby/nearby.component';
 import { CommunityComponent } from './components/community/community.component';
 import {routing} from './app.routing';
 import { LoaderComponent } from './components/loader/loader.component';
+import { FindmeComponent } from './findme/findme.component';
+import { SearchComponent } from './components/search/search.component';
+import { MoviesService } from './services/movies.services';
 
-
+export const firebaseConfig = {
+  apiKey: 'AIzaSyA-4BFwaOoZxEtRKyu0NrmyHizHquAfOs4',
+  authDomain: 'fir-tutorial-6dd87.firebaseapp.com',
+  databaseURL: 'https://fir-tutorial-6dd87.firebaseio.com',
+  storageBucket: 'fir-tutorial-6dd87.appspot.com',
+  messagingSenderId: '231223477216'
+};
 
 @NgModule({
   declarations: [
@@ -58,9 +69,17 @@ import { LoaderComponent } from './components/loader/loader.component';
     AboutComponent,
     NearbyComponent,
     CommunityComponent,
-    LoaderComponent
+    LoaderComponent,
+    FindmeComponent,
+    SearchComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
     BrowserModule,
     routing,
     NoopAnimationsModule,
@@ -97,7 +116,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     MatToolbarModule,
     MatTooltipModule,
   ],
-  providers: [],
+  providers: [
+    MoviesService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,15 @@
+
+<input id="searchbox" type="text" (keydown)="search($event)"  placeholder="search for ..." class="input">
+<div *ngFor="let movie of movies">
+  <h4>{{movie?.title}}</h4>
+  <p>
+    {{movie?.plot}}
+  </p>
+</div>
+<div *ngIf="movies?.length < 1">
+  <hr>
+  <p>
+    No results found :(
+  </p>
+</div>
+
