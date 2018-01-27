@@ -42,6 +42,11 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import { AboutComponent } from './components/about/about.component';
+import { NearbyComponent } from './components/nearby/nearby.component';
+import { CommunityComponent } from './components/community/community.component';
+import {routing} from './app.routing';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 
@@ -49,10 +54,15 @@ import {
   declarations: [
     AppComponent,
     PizzastatusComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent,
+    NearbyComponent,
+    CommunityComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
+    routing,
     NoopAnimationsModule,
     CdkTableModule,
     MatAutocompleteModule,
