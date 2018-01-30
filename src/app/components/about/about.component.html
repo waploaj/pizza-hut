@@ -91,7 +91,29 @@
                     </div>
                   </div>
     </mat-tab>
-    <mat-tab label="I don't know">Content 4</mat-tab>
+    <mat-tab label="I don't know">
+
+<input id="searchbox" type="text" (keydown)="search($event)"  placeholder="search for ..." class="input">
+      <div *ngFor="let movie of movies">
+        <a routerLink="/pizzastatus" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <h4>{{movie?.title}}</h4>
+        <p>
+          {{movie?.plot}}
+        </p> 
+        </a>
+      </div>
+      <div *ngIf="movies?.length < 1">
+        <hr>
+        <a routerLink="/community" class="list-group-item list-group-item-action flex-column align-items-start active">
+          <h4>
+            the page your looking for is not found 
+            <p>
+              see sugestion:)
+            </p>
+          </h4>
+        </a>
+      </div>
+    </mat-tab>
     <mat-tab label="Clubs" ><a routerLink="/community">label="Tab 5" </a> </mat-tab>
   </mat-tab-group>
   

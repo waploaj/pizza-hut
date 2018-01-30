@@ -52,6 +52,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { FindmeComponent } from './findme/findme.component';
 import { SearchComponent } from './components/search/search.component';
 import { MoviesService } from './services/movies.services';
+import {ClubsService} from './services/clubs.services';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyA-4BFwaOoZxEtRKyu0NrmyHizHquAfOs4',
@@ -118,6 +119,7 @@ export const firebaseConfig = {
   ],
   providers: [
     MoviesService,
+    ClubsService
   ],
   bootstrap: [AppComponent]
 })

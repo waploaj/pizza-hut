@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
+  // clubs: any[];
   movies;
   startAt: BehaviorSubject<string|null> = new BehaviorSubject('');
   endAt: BehaviorSubject<string|null> = new BehaviorSubject('\uf8ff');

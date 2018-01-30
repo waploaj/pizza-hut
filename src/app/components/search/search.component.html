@@ -1,15 +1,25 @@
 
 <input id="searchbox" type="text" (keydown)="search($event)"  placeholder="search for ..." class="input">
 <div *ngFor="let movie of movies">
+  <a routerLink="/pizzastatus" class="list-group-item list-group-item-action flex-column align-items-start active">
   <h4>{{movie?.title}}</h4>
   <p>
     {{movie?.plot}}
-  </p>
+  </p> 
+  </a>
 </div>
 <div *ngIf="movies?.length < 1">
   <hr>
-  <p>
-    No results found :(
-  </p>
+  <a  routerLink="/community" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <h4>
+      the page your looking for is not found 
+      <p>
+        see sugestion:)
+      </p>
+    </h4>
+  </a>
+
+<img class="list-group-item list-group-item-action flex-column align-items-start active" id="image" src="https://m.popkey.co/8742ca/MlZaK.gif "  width="200px" height="300px"
+alt="pizza-hunt-box">
 </div>
 
